@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Experiment</title>
+  <script src="jspsych.js"></script>
+  <script src="jspsych-video-keyboard-response.js"></script>
+  <script src="my_experiment.js"></script>
+</head>
+<body>
+  <script>
+    // Initialize the experiment when the page loads
+    window.onload = function() {
+      // Define the timeline
+      var timeline = [];
+
+      // URL of the video hosted on Qualtrics
+      var video_url = 'https://tzub1.github.io/JsPsych_videostimulus/2024_06_02_14_22_53.mp4';
+
+      // Define the video trial
+      var video_trial = {
+        type: 'video-keyboard-response',
+        stimulus: [video_url],
+        choices: jsPsych.ALL_KEYS,
+        trial_ends_after_video: true,
+        prompt: '<p>Press any key to continue.</p>'
+      };
+
+      // Add the video trial to the timeline
+      timeline.push(video_trial);
+
+      // Initialize jsPsych and run the experiment
+      jsPsych.init({
+        timeline: timeline,
+        on_finish: function() {
+          jsPsych.data.displayData();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

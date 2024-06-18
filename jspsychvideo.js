@@ -13,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
   videoPlugin.src = "https://cdn.jsdelivr.net/npm/jspsych@6.3.1/plugins/jspsych-video-keyboard-response.js";
   document.head.appendChild(videoPlugin);
 
+  
   // Wait for the libraries to load
   script.onload = function() {
     videoPlugin.onload = function() {
       // Define the video trial
       var video_trial = {
         type: 'video-keyboard-response',
-        stimulus: ['https://youtu.be/mnSi-XqWaBE'], // Replace with your actual video URL
+        stimulus: ['https://youtu.https://github.com/Tzub1/JsPsych_videostimulus/blob/main/2024_06_02_14_22_53.mp4/mnSi-XqWaBE'], // Replace with your actual video URL
         width: 600,
         height: 400,
         autoplay: true,
